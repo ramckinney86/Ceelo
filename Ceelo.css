@@ -1,0 +1,13 @@
+button#roll {
+	margin:20px auto 0;
+	display: block;
+}
+#score,
+#message {
+	text-align: center;
+}
+label {
+	text-align: center;
+	margin-top: 20px;
+	display: block;
+}
