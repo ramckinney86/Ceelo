@@ -14,7 +14,7 @@ if(roll1 == roll2 && roll2 == roll3) {
 	finalScore = "TRIPLE " + roll2;
 //make if statement for CONTAINS 123
 } else if (score.indexOf('1') >= 0 && score.indexOf('2') >=0 && score.indexOf('3') >= 0) {
-			finalScore = "123 You LOSE!!!";
+	finalScore = "123 You LOSE!!!";
 //make if statement for CONTAINS 456
 } else if (score.indexOf('4') >= 0 && score.indexOf('5') >=0 && score.indexOf('6') >= 0) {
 	finalScore = "456 You WIN!!!";
