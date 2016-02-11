@@ -1,35 +1,55 @@
-//create an array 1-6
-var dice = new Array(1,2,3,4,5,6);
+// Ceelo - Hot hand at a dice game
+// Written in Javascript
+// RM 2016
 
-//randomly select an element from the array for 3 dice
-var roll1 = dice[Math.floor(Math.random() * dice.length)];
-var roll2 = dice[Math.floor(Math.random() * dice.length)];
-var roll3 = dice[Math.floor(Math.random() * dice.length)];
+function diceRoll() {
+	return Math.ceil(Math.random() * 6);
+}
 
-//Create score
-var score = ""+roll1+roll2+roll3;
+function purple() {
+	document.getElementById("message").className = "purple";
+}
 
-//Calculate score
-if(roll1 == roll2 && roll2 == roll3) {
-	finalScore = "TRIPLE " + roll2 + "!!!";
-//make if statement for CONTAINS 123
-} else if (score.indexOf('1') >= 0 && score.indexOf('2') >=0 && score.indexOf('3') >= 0) {
-	finalScore = "123 You LOSE!!!";
-//make if statement for CONTAINS 456
-} else if (score.indexOf('4') >= 0 && score.indexOf('5') >=0 && score.indexOf('6') >= 0) {
-	finalScore = "456 You WIN!!!";
-} else if(roll1 == roll2) {
-	finalScore = roll3;
-} else if(roll2 == roll3) {
-	finalScore = roll1;
-} else if(roll1 == roll3) {
-	finalScore = roll2;
-} else {
-	finalScore = "Roll again!";
-};
+function roll() {
+	var roll1 = diceRoll();
+	var roll2 = diceRoll();
+	var roll3 = diceRoll();
 
-//Below displays numbers in page but with no element wrapping, just floating in body
-// document.write(score);
-// document.write(finalScore);
+	//Create score
+	var score = ""+roll1+roll2+roll3;
+
+	//Calculate score
+	if(roll1 == roll2 && roll2 == roll3) {
+		finalScore = "TRIP " + roll2 + "s!!!";
+		document.getElementById("message").className = "trips";
+	//make if statement for CONTAINS 123
+	} else if (score.indexOf('1') >= 0 && score.indexOf('2') >=0 && score.indexOf('3') >= 0) {
+		finalScore = "123 You LOSE!!!";
+		document.getElementById("message").className = "lose";
+	//make if statement for CONTAINS 456
+	} else if (score.indexOf('4') >= 0 && score.indexOf('5') >=0 && score.indexOf('6') >= 0) {
+		finalScore = "456 You WIN!!!";
+		document.getElementById("message").className = "win";
+	} else if(roll1 == roll2) {
+		finalScore = roll3;
+		purple();
+	} else if(roll2 == roll3) {
+		finalScore = roll1;
+		purple();
+	} else if(roll1 == roll3) {
+		finalScore = roll2;
+		purple();
+	} else {
+		finalScore = "Roll again!";
+		document.getElementById("message").className = "black";
+	};
+
+	// displays roll on page
+	document.getElementById("first-die").className = "dice dice-" + roll1;
+	document.getElementById("second-die").className = "dice dice-" + roll2;
+	document.getElementById("third-die").className = "dice dice-" + roll3;
+	// displays score on page
+  	document.getElementById("message").innerHTML = finalScore;
+}
 
 //cue animations for 123 and 456

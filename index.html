@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <title>Ceelo - Hot Hand at a Dice Game</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
     <link rel="stylesheet" href="Ceelo.css">
+    <link rel="stylesheet" href="normalize.css">
     <script src="Ceelo.js"></script>
   </head>
   <body>
-  	<button onclick="location.reload()" id="roll">Roll</button>
-  	<label>Your roll:</label>
-  	<div id="score"></div>
-  	<label>Your score:</label>
-  	<div id="message"></div>
- //  	<script type="text/javascript">
-  		document.getElementById("score").innerHTML = score;
-		  document.getElementById("message").innerHTML = finalScore;
-	// </script>
+  <div id="container">
+      <header>
+        <h1>Ceelo</h1>
+        <h2>Hot hand at a dice game</h2>
+      </header>
+      <section id="content">
+        <div class="dice">
+          <span class="dice dice-2" id="first-die"></span>
+          <span class="dice dice-3" id="second-die"></span>
+          <span class="dice dice-3" id="third-die"></span>
+        </div>
+      	<label>Your score:</label>
+      	<div id="message">Roll mother fucker roll!</div>
+        <button onclick="roll();" id="roll">Roll</button>
+      </section>
+    </div>
   </body>
 </html>
