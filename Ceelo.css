@@ -116,6 +116,7 @@ header h2 {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+button:focus {outline:0;}
 button#roll {
 	background: #800080;
 	padding: 10px;
