@@ -116,6 +116,22 @@ header h2 {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+button#roll {
+	background: #800080;
+	padding: 10px;
+	width: 150px;
+	border: 1px solid black;
+	color: white;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+button#roll:active {
+	background: red;
+	/*color: red;*/
+}
+
 .blue {
 	color: blue;
 }
